@@ -63,8 +63,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 adv2.show();
             }
         }
-
-
     }
 
 }
