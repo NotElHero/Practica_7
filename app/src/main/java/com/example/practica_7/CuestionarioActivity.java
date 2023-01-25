@@ -1,7 +1,11 @@
 package com.example.practica_7;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -15,6 +19,7 @@ public class CuestionarioActivity extends Activity implements View.OnClickListen
     RadioButton radioGoogle, radioApple, radioJetbrains, radioHuawei;
     Button siguiente, verResultados, anterior;
     ArrayList<Integer> preguntasArray = new ArrayList<>();
+    int pregunta = 1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,30 +44,30 @@ public class CuestionarioActivity extends Activity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-        int pregunta = 1;
-
         switch (view.getId()){
             case R.id.botonSiguiente:
                 pregunta++;
                 if (pregunta > 5){
                     pregunta = 5;
                 }
-
+                Log.d(TAG, "Valor pregunta: "+pregunta);
                 cambiarPregunta(pregunta);
                 break;
 
             case R.id.botonAnterior:
                 pregunta--;
                 if (pregunta < 1){
-                    pregunta = 1;
+                    Intent volverInicio = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(volverInicio);
                 }
+                Log.d(TAG, "Valor pregunta: "+pregunta);
 
                 cambiarPregunta(pregunta);
                 break;
         }
     }
 
-    public int cambiarPregunta(int pregunta){
+    public void cambiarPregunta(int pregunta){
         switch (pregunta){
             case 1:
                 setContentView(preguntasArray.get(0));
@@ -71,6 +76,5 @@ public class CuestionarioActivity extends Activity implements View.OnClickListen
                 setContentView(preguntasArray.get(1));
                 break;
         }
-        return pregunta;
     }
 }
