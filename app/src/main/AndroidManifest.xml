@@ -25,7 +25,22 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".CuestionarioActivity">
+        <activity android:name=".Pregunta1Activity">
+
+        </activity>
+        <activity android:name=".Pregunta2Activity">
+
+        </activity>
+        <activity android:name=".Pregunta3Activity">
+
+        </activity>
+        <activity android:name=".Pregunta4Activity">
+
+        </activity>
+        <activity android:name=".Pregunta5Activity">
+
+        </activity>
+        <activity android:name=".ResultadosActivity">
 
         </activity>
     </application>

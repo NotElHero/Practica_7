@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
-        android:text="Pregunta 1"
+        android:text="Pregunta 4"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -93,7 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="63dp"
-        android:text="Salir"
+        android:text="Anterior"
         app:layout_constraintEnd_toEndOf="@+id/botonSiguiente"
         app:layout_constraintStart_toStartOf="@+id/botonSiguiente"
         app:layout_constraintTop_toTopOf="@+id/botonSiguiente" />
