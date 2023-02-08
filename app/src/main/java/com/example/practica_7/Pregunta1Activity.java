@@ -7,11 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class Pregunta1Activity extends Activity implements View.OnClickListener {
 
     Button siguiente, anterior;
-    int resultadoPregunta;
+    int resultadoPregunta = 0;
     RadioGroup radioOpciones;
 
     @Override
@@ -32,13 +33,18 @@ public class Pregunta1Activity extends Activity implements View.OnClickListener 
         switch (view.getId()){
             case R.id.botonSiguiente:
                 comprobarRespuesta();
-                Intent lanzarP2 = new Intent(this, Pregunta2Activity.class);
-                lanzarP2.putExtra("resultadoP1", resultadoPregunta);
-                startActivity(lanzarP2);
+                if (resultadoPregunta == -1 || resultadoPregunta == 1){
+                    Intent lanzarP2 = new Intent(getApplicationContext(), Pregunta2Activity.class);
+                    lanzarP2.putExtra("resultadoP1", resultadoPregunta);
+                    startActivity(lanzarP2);
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Responde a la pregunta antes de continuar", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
                 break;
 
             case R.id.botonAnterior:
-                Intent volverInicio = new Intent(this, MainActivity.class);
+                Intent volverInicio = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(volverInicio);
                 break;
         }

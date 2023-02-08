@@ -69,4 +69,15 @@
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="No es necesario responder a todas las preguntas \n Se puntuarán solo las preguntas respondidas"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/botonEmpezar"
+        app:layout_constraintStart_toStartOf="@+id/botonEmpezar"
+        app:layout_constraintTop_toBottomOf="@+id/botonEmpezar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
