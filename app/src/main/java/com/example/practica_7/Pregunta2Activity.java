@@ -1,8 +1,11 @@
 package com.example.practica_7;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -14,7 +17,8 @@ public class Pregunta2Activity extends Activity implements View.OnClickListener 
     Button siguiente, anterior;
     Boolean seleccionC = false, seleccionPython = false, seleccionJS = false, seleccionJava = false;
     private CheckBox opcionC, opcionJS, opcionPython, opcionJava;
-    int resultadoPregunta = 99;
+    int resultadoPregunta;
+    String resultP1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,7 @@ public class Pregunta2Activity extends Activity implements View.OnClickListener 
         opcionJS = findViewById(R.id.checkJS);
 
         Intent intent = getIntent();
-        String resultP1 = intent.getStringExtra("resultadoP1");
+        resultP1 = intent.getStringExtra("resultadoP1");
     }
 
     @Override
@@ -40,12 +44,12 @@ public class Pregunta2Activity extends Activity implements View.OnClickListener 
         comprobarCheckbox(view);
         switch (view.getId()){
             case R.id.botonSiguiente:
-                if (resultadoPregunta == 99){
-                    Toast toast = Toast.makeText(this, "Por favor, responde antes de continuar", Toast.LENGTH_SHORT);
-                    toast.show();
-                } else{
+                if (resultadoPregunta == 0 || resultadoPregunta == 1){
                     Intent lanzarP3 = new Intent(this, Pregunta3Activity.class);
                     startActivity(lanzarP3);
+                } else{
+                    Toast toast = Toast.makeText(this, "Por favor, responde antes de continuar", Toast.LENGTH_SHORT);
+                    toast.show();
                 }
                 break;
 
@@ -64,8 +68,9 @@ public class Pregunta2Activity extends Activity implements View.OnClickListener 
 
         switch (view.getId()){
             case R.id.checkC:
-                if (checkedC){
+                if (checkedC.booleanValue()){
                     seleccionC = true;
+                    Log.d(TAG, "comprobarCheckbox: " + seleccionC);
                 }else{
                     seleccionC = false;
                 }
@@ -92,6 +97,7 @@ public class Pregunta2Activity extends Activity implements View.OnClickListener 
                 }
                 break;
         }
+
         comprobarRespuesta();
     }
 
