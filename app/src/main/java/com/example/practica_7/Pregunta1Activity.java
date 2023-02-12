@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class Pregunta1Activity extends Activity implements View.OnClickListener {
 
-    Button siguiente, anterior;
+    Button siguiente;
     int resultadoPregunta = 0;
     RadioGroup radioOpciones;
 
@@ -22,8 +22,6 @@ public class Pregunta1Activity extends Activity implements View.OnClickListener 
 
         siguiente = findViewById(R.id.botonSiguiente);
         siguiente.setOnClickListener(this);
-        anterior = findViewById(R.id.botonAnterior);
-        anterior.setOnClickListener(this);
 
         radioOpciones = findViewById(R.id.radioGroup2);
     }
@@ -41,11 +39,6 @@ public class Pregunta1Activity extends Activity implements View.OnClickListener 
                     Toast toast = Toast.makeText(getApplicationContext(), "Responde a la pregunta antes de continuar", Toast.LENGTH_SHORT);
                     toast.show();
                 }
-                break;
-
-            case R.id.botonAnterior:
-                Intent volverInicio = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(volverInicio);
                 break;
         }
     }

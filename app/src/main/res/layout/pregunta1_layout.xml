@@ -88,13 +88,4 @@
         app:layout_constraintStart_toStartOf="@+id/radioGroup2"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
-    <Button
-        android:id="@+id/botonAnterior"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="63dp"
-        android:text="Salir"
-        app:layout_constraintEnd_toEndOf="@+id/botonSiguiente"
-        app:layout_constraintStart_toStartOf="@+id/botonSiguiente"
-        app:layout_constraintTop_toTopOf="@+id/botonSiguiente" />
 </androidx.constraintlayout.widget.ConstraintLayout>

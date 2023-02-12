@@ -5,27 +5,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 
 public class Pregunta3Activity extends Activity implements View.OnClickListener {
 
-    RadioButton radioGoogle, radioApple, radioJetbrains, radioHuawei;
     Button siguiente, anterior;
+    EditText editRespuesta;
+    String respuestaP3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pregunta3_layout);
 
-        radioGoogle = findViewById(R.id.radioGoogle);
-        radioApple = findViewById(R.id.radioApple);
-        radioJetbrains = findViewById(R.id.radioJetbrains);
-        radioHuawei = findViewById(R.id.radioHuawei);
-
         siguiente = findViewById(R.id.botonSiguiente);
         siguiente.setOnClickListener(this);
         anterior = findViewById(R.id.botonAnterior);
         anterior.setOnClickListener(this);
+
+        editRespuesta = findViewById(R.id.editRespuesta);
 
     }
 
@@ -33,7 +32,13 @@ public class Pregunta3Activity extends Activity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.botonSiguiente:
+                if (editRespuesta.getText().toString() == "C"){
+                    respuestaP3 = "1";
+                } else {
+                    respuestaP3 = "0";
+                }
                 Intent lanzarP4 = new Intent(this, Pregunta4Activity.class);
+                lanzarP4.putExtra("RESPUESTAP3", respuestaP3);
                 startActivity(lanzarP4);
                 break;
 

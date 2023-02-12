@@ -22,71 +22,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="¿Quién es el actual propietario de Android?"
+        android:text="¿Qué lenguaje fue el más popular en 2020?"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup2"
-        android:layout_width="201dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/radioGoogle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Google" />
-
-                <RadioButton
-                    android:id="@+id/radioApple"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Apple" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <RadioButton
-                    android:id="@+id/radioJetbrains"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jetbrains" />
-
-                <RadioButton
-                    android:id="@+id/radioHuawei"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Huawei" />
-            </TableRow>
-
-        </TableLayout>
-    </RadioGroup>
-
     <Button
         android:id="@+id/botonSiguiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
         android:text="Siguiente"
-        app:layout_constraintEnd_toEndOf="@+id/radioGroup2"
-        app:layout_constraintStart_toStartOf="@+id/radioGroup2"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="428dp" />
 
     <Button
         android:id="@+id/botonAnterior"
@@ -97,4 +45,18 @@
         app:layout_constraintEnd_toEndOf="@+id/botonSiguiente"
         app:layout_constraintStart_toStartOf="@+id/botonSiguiente"
         app:layout_constraintTop_toTopOf="@+id/botonSiguiente" />
+
+    <EditText
+        android:id="@+id/editRespuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:autofillHints="Tu respuesta"
+        android:ems="10"
+        android:hint="Tu respuesta"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
